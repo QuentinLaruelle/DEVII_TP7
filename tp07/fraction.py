@@ -12,9 +12,9 @@ class Fraction:
 
     def __init__(self, num=0, den=1):
         """This builds a fraction based on some numerator and denominator.
-        PRE : num est un entier par defaut 0, et den est un entier différent de 0 et par defaut 1
+        PRE : num is an integer by default 0, den is an integer different from 0 and by default 1
         POST : /
-        RAISES : ZeroDivisionError si den == 0
+        RAISES : ZeroDivisionError id den == 0
         """
         if den == 0:
             raise ZeroDivisionError
@@ -34,9 +34,9 @@ class Fraction:
     # ------------------ Textual representations ------------------
 
     def __str__(self):
-        """Return a textual representation of the reduced form of the fraction
+        """Return a textual representation of the most simplified form of the fraction
         PRE : /
-        POST : Retourne la Fraction simplifié au maximum
+        POST : Return the most simplified form of the fraction
         """
         n = self.__num
         d = self.__den
@@ -55,7 +55,7 @@ class Fraction:
         A mixed number is the sum of an integer and a proper fraction
 
         PRE : /
-        POST : Retourne un entier + la Fraction
+        POST : Return an integer + la Fraction
         """
         return (self.__num/self.__den)+2
 
@@ -64,33 +64,33 @@ class Fraction:
     def __add__(self, other):
         """Overloading of the + operator for fractions
 
-         PRE : other est un entier
-         POST : Retourne num/den + other
+         PRE : other is an integer
+         POST : Return num/den + other
          """
         return round(((self.__num/self.__den)+other), 2)
 
     def __sub__(self, other):
         """Overloading of the - operator for fractions
 
-        PRE : other est un entier
-         POST : Retourne num/den - other
+        PRE : other is an integer
+         POST : Return num/den - other
         """
         return round(((self.__num/self.__den)-other), 2)
 
     def __mul__(self, other):
         """Overloading of the * operator for fractions
 
-        PRE : other est un entier
-         POST : Retourne num/den * other
+        PRE : other is an integer
+         POST : Return num/den * other
         """
         return round(((self.__num/self.__den)*other), 2)
 
     def __truediv__(self, other):
         """Overloading of the / operator for fractions
 
-        PRE : other est un entier
-         POST : Retourne (num/den)/other
-        RAISES : ZeroDivisionError si other == 0
+        PRE : other is an integer
+         POST : Return (num/den)/other
+        RAISES : ZeroDivisionError if other == 0
         """
         if other == 0:
             raise ZeroDivisionError
@@ -100,16 +100,16 @@ class Fraction:
     def __pow__(self, other):
         """Overloading of the ** operator for fractions
 
-        PRE : other est un entier
-         POST : Retourne (num/den) ** other
+        PRE : other is an integer
+         POST : Return (num/den) ** other
         """
         return round(((self.__num/self.__den)**other), 4)
 
     def __eq__(self, other):
         """Overloading of the == operator for fractions
 
-        PRE : other est un entier
-         POST : Retourne True si num/den == other sinon False
+        PRE : other is an integer
+         POST : Return True if num/den == other else False
 
         """
         return round((self.__num/self.__den), 2) == other
@@ -118,7 +118,7 @@ class Fraction:
         """Returns the decimal value of the fraction
 
         PRE : /
-        POST : Retourne la valeur decimal de la fraction
+        POST : Return the decimal value of the fraction
         """
         return self.__num/self.__den
 
@@ -130,7 +130,7 @@ class Fraction:
         """Check if a fraction's value is 0
 
         PRE : /
-        POST : Retourne True si num == 0 sinon False
+        POST : Return True if num == 0 else False
         """
         if self.__num == 0:
             return True
@@ -141,7 +141,7 @@ class Fraction:
         """Check if a fraction is integer (ex : 8/4, 3, 2/2, ...)
 
         PRE : /
-        POST : Retourne True si num/den == integer sinon False
+        POST : Return True si num/den == integer else False
         """
         if self.__num / self.__den % 1 == 0:
             return True
@@ -152,7 +152,7 @@ class Fraction:
         """Check if the absolute value of the fraction is < 1
 
         PRE : /
-        POST : Retourne True si |num/den| < 1 sinon False
+        POST : Return True if |num/den| < 1 else False
         """
         if abs(self.__num/self.__den) < 1:
             return True
@@ -163,7 +163,7 @@ class Fraction:
         """Check if a fraction's numerator is 1 in its reduced form
 
         PRE : /
-        POST : Retourne True si num == 1 lorsque la fraction est simplifié sinon False
+        POST : Return True si num == 1 while the fraction is simplified else it returns False
         """
         n = self.__num
         d = self.__den
@@ -185,8 +185,8 @@ class Fraction:
         Two fractions are adjacents if the absolute value of the difference them is a unit fraction
 
         PRE : /
-        POST : Retourne True si |(num/den)-other|  = 1/x sinon False
-        RAISES : ZeroDivisionError si other == 0
+        POST : Return True if |(num/den)-other|  = 1/x else False
+        RAISES : ZeroDivisionError if other == 0
         """
         if other == 0:
             raise ZeroDivisionError
